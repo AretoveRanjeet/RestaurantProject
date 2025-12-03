@@ -1,17 +1,24 @@
 <template>
-<div class="nav">
-    <a href="home"> Home</a>
-<a href="home"> Add Restaurent</a>
-<a href="home"> Update Restaurent</a>
-<a href="home"> Log Out</a>
+    <div class="nav">
+        <router-link  to="/">Home</router-link>
+        <router-link to="/AddResto">Add Restaurent</router-link>
+        <a v-on:click="logout">Log Out</a>
 
-</div>
+    </div>
 
 </template>
 
 <script>
-export default{
-    name:"HeaderComponent"
+
+
+export default {
+    name: "HeaderComponent",
+    methods: {
+        logout() {
+            localStorage.clear();
+            this.$router.push({ name: "LoginComponent" })
+        }
+    }
 }
 </script>
 <style>
@@ -23,9 +30,13 @@ export default{
     text-align: center;
     text-decoration: none;
     font-size: 20px;
+    cursor: pointer;
 }
-.nav a:hover{
+
+.nav a:hover {
     color: black;
-    background-color: wheat;
+    background-color: rgb(245, 203, 179);
 }
+
+
 </style>
