@@ -27,6 +27,27 @@ export default {
     },
     methods: {
         async updateRestaurent() {
+            const name = this.RestaurentName.trim();
+            const location = this.Location.trim();
+            const contact = this.Contact.toString().trim();
+
+            if (!name || !location || !contact) {
+                alert("Please fill all fields before submitting!");
+                return;
+            }
+
+            if (contact.length !== 10) {
+                alert("Contact number must be 10 digits");
+                return;
+            }
+            if (contact[0] !== "6" &&
+                contact[0] !== "7" &&
+                contact[0] !== "8" &&
+                contact[0] !== "9"
+            ) {
+                alert("Contact number must Start from 6,7,8,9");
+                return;
+            }
             const result = await axios.put("http://localhost:3000/restaurent/" + this.$route.params.id, {
                 RestaurentName: this.RestaurentName,
                 Location: this.Location,
