@@ -1,7 +1,7 @@
 <template>
     <HeaderComponent /> <br /><br /><br />
     <h3 class="h3">Welcome {{ name }} to Home Page</h3> <br /><br /><br /><br /><br />
-    <table border="5">
+    <table border="4">
         <tr>
             <td>ID</td>
             <td>Restaurent Name</td>
@@ -71,7 +71,7 @@ export default {
 }
 
 td {
-    height: 40px;
-    width: 150px;
+    height: 50px;
+    width: 140px;
 }
 </style>
