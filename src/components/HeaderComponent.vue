@@ -24,7 +24,7 @@ export default {
 <style>
 .nav a {
     color: white;
-    background: rgb(67, 39, 39);
+    background: rgb(237, 53, 53);
     padding: 10px;
     float: left;
     text-align: center;
